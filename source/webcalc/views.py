@@ -17,26 +17,26 @@ def index_view(request):
         return render(request, 'index.html', context)
 
 
-def calculation(reqst):
-    try:
-        if reqst.method == "POST":
-            if reqst.POST.get('calculation') == 'addition':
-                calculation_result = int(reqst.POST.get('num1')) + int(reqst.POST.get('num2'))
-                return calculation_result
-            elif reqst.POST.get('calculation') == 'subtraction':
-                calculation_result = int(reqst.POST.get('num1')) - int(reqst.POST.get('num2'))
-                return calculation_result
-            elif reqst.POST.get('calculation') == 'multiplication':
-                calculation_result = int(reqst.POST.get('num1')) * int(reqst.POST.get('num2'))
-                return calculation_result
-            elif reqst.POST.get('calculation') == 'division':
-                if int(reqst.POST.get('num2')) == 0:
-                    return f"Cannot divide by Zero"
-                else:
-                    calculation_result = int(reqst.POST.get('num1')) / int(reqst.POST.get('num2'))
-                    return calculation_result
-    except ValueError:
-        return f"Please enter a number"
+# def calculation(reqst):
+#     try:
+#         if reqst.method == "POST":
+#             if reqst.POST.get('calculation') == 'addition':
+#                 calculation_result = int(reqst.POST.get('num1')) + int(reqst.POST.get('num2'))
+#                 return calculation_result
+#             elif reqst.POST.get('calculation') == 'subtraction':
+#                 calculation_result = int(reqst.POST.get('num1')) - int(reqst.POST.get('num2'))
+#                 return calculation_result
+#             elif reqst.POST.get('calculation') == 'multiplication':
+#                 calculation_result = int(reqst.POST.get('num1')) * int(reqst.POST.get('num2'))
+#                 return calculation_result
+#             elif reqst.POST.get('calculation') == 'division':
+#                 if int(reqst.POST.get('num2')) == 0:
+#                     return f"Cannot divide by Zero"
+#                 else:
+#                     calculation_result = int(reqst.POST.get('num1')) / int(reqst.POST.get('num2'))
+#                     return calculation_result
+#     except ValueError:
+#         return f"Please enter a number"
 
 
 def get_symbols(reqst):
